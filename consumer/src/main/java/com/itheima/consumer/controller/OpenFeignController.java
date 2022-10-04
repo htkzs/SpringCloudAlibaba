@@ -1,10 +1,12 @@
 package com.itheima.consumer.controller;
 
 import com.itheima.consumer.entity.Order;
+import com.itheima.consumer.entity.OrderInfo;
 import com.itheima.consumer.feign.ProviderFeign;
 import com.itheima.consumer.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,4 +25,10 @@ public class OpenFeignController {
 
     }
 
+    //模拟远程调用传递的参数为一个对象 通过URL的方式传递参数 localhost:9002/order/orderInfo？orderId=1
+    @RequestMapping("/orderInfo")
+    public OrderInfo createOrderInfo(@RequestParam Integer orderId){
+        OrderInfo orderInfo = orderService.createOrderInfo(orderId);
+        return orderInfo;
+    }
 }

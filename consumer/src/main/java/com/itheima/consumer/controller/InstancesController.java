@@ -17,6 +17,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class InstancesController {
     @Autowired
     private RestTemplate restTemplate;
+    //注入DiscoveryClient用于发现Nacos的服务实例
     @Autowired
     private DiscoveryClient discoveryClient;
     @GetMapping("/instances")
