@@ -6,7 +6,7 @@ spring:
       discovery:
         server-addr: 192.168.26.1:8848
 server:
-  port: 9002
+  port: 9001
 
 provider:
   ribbon:

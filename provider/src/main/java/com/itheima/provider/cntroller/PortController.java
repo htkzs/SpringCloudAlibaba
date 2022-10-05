@@ -17,8 +17,7 @@ public class PortController {
     public String getPort(){
         i++;
         //此时的异常比例为50%
-        if(i%2 == 0) throw new RuntimeException();
-
+        //if(i%2 == 0) throw new RuntimeException();
         return port;
     }
     @GetMapping("/list")

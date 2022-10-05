@@ -33,10 +33,15 @@ public class InstancesController {
         List<ServiceInstance> provider = this.discoveryClient.getInstances("provider");
         //随机选择一个服务调用
         int i = ThreadLocalRandom.current().nextInt(provider.size());
+        //打印所有的服务实例
+        for (int j = 0; j < provider.size(); j++) {
+            System.out.println(provider.get(i));
+        }
         //得到具体的服务实例
         ServiceInstance serviceInstance = provider.get(i);
         //获取该服务的uri
         URI uri = serviceInstance.getUri();
+        log.info("访问的URI为:"+uri);
         String url = uri+"/index";
         log.info("调用了端口为{}的服务",serviceInstance.getPort());
         //远程调用provider服务

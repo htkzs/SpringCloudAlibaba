@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
 public class ConsumerApplication {
     //增加restTemplete的Bean
     @Bean
-    @LoadBalanced   //ribbon组件 netflix组件 不属于SpringCloudAlibaba
+    @LoadBalanced   //ribbon组件 netflix组件 不属于SpringCloudAlibaba 使用@LoadBalance会使用服务名称调用
     public RestTemplate restTemplate(){
         return new RestTemplate();
     }
