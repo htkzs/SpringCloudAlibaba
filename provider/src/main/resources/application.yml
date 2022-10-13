@@ -8,6 +8,18 @@ spring:
     sentinel:
       transport:
         dashboard: 192.168.26.1:8080
+  redis:
+    host: 192.168.0.5
+    port: 6379
+    password:
+    database: 0
+    lettuce:
+      pool:
+        max-wait: -1
+        max-idle: 5
+        min-idle: 0
+        max-active: 20
+    timeout: 1000
 server:
   port: 9003
 management:
